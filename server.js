@@ -17,9 +17,11 @@ connectDB();
 
 const app = express();
 
+// Configuration CORS simplifiée
+app.use(cors());
+
 // Middlewares
 app.use(express.json()); // Permet de parser les requêtes JSON
-app.use(cors()); // Active CORS pour toutes les requêtes
 
 // Route de test (optionnel)
 app.get('/', (req, res) => {
