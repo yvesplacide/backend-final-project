@@ -23,7 +23,7 @@ app.use(cors());
 // Middlewares
 app.use(express.json()); // Permet de parser les requêtes JSON
 
-// Route de test (optionnel)
+// Route de test 
 app.get('/', (req, res) => {
     res.send('API is running...');
 });
