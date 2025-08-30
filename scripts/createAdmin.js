@@ -11,19 +11,26 @@ const createAdmin = async () => {
         await mongoose.connect(process.env.MONGO_URI);
         console.log('Connecté à MongoDB');
 
-        // Créer l'administrateur
+        // Créer l'administrateur avec TOUS les champs obligatoires
         const admin = await User.create({
-            firstName: 'Admin',
-            lastName: 'System',
-            email: 'admin@system.com',
-            password: 'admin123',
+            firstName: 'Yves',
+            lastName: 'Placide',
+            email: 'yvesplacide@gmail.com',
+            password: 'Maman05171409',
+            phone: '+2250779545834', // CHAMP OBLIGATOIRE
+            profession: 'Administrateur Système', // CHAMP OBLIGATOIRE
+            address: 'Siège Social, Abidjan', // CHAMP OBLIGATOIRE
+            dateOfBirth: '2002-03-16', // CHAMP OBLIGATOIRE
+            birthPlace: 'Abidjan', // CHAMP OBLIGATOIRE
             role: ROLES.ADMIN
         });
 
-        console.log('Administrateur créé avec succès:', admin);
+        console.log('✅ Administrateur créé avec succès!');
+        console.log('📋 Détails:', admin.firstName, admin.lastName, admin.email);
         process.exit(0);
     } catch (error) {
-        console.error('Erreur lors de la création de l\'administrateur:', error);
+        console.error('❌ Erreur lors de la création de l\'administrateur:', error.message);
+        console.error('💡 Assurez-vous que tous les champs obligatoires sont fournis');
         process.exit(1);
     }
 };
