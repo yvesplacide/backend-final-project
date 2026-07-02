@@ -15,7 +15,7 @@ const createAdmin = async () => {
         const admin = await User.create({
             firstName: 'Yves',
             lastName: 'Placide',
-            email: 'yvesplacide@gmail.com',
+            email: 'yvesplacide75@gmail.com',
             password: 'Maman05171409',
             phone: '+2250779545834', // CHAMP OBLIGATOIRE
             profession: 'Administrateur Système', // CHAMP OBLIGATOIRE
